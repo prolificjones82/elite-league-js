@@ -3,7 +3,12 @@
   "version": "1.0.0-alpha.1",
   "description": "JS SDK for the Elite League API",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "start": "tsc -p tsconfig.json --watch",
+      "build": "tsc -p tsconfig.json",
+      "check": "tsc --noEmit -p tsconfig.json",
+      "test": "npm run build && node --import ./test/register-loader.js --test test/*.test.js",
+      "format": "prettier --write .",
+      "format:check": "prettier --check ."
   },
   "repository": {
     "type": "git",
