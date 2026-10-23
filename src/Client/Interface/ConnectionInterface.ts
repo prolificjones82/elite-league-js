@@ -1,4 +1,4 @@
-import { EliteLeagueRequest } from "../../Request/EliteLeagueRequest";
+import { EliteLeagueRequest } from '../../Request/EliteLeagueRequest';
 
 export interface ConnectionInterface {
     /**

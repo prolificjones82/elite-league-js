@@ -1,6 +1,6 @@
-import { BASE_URL, CONTENT_TYPE } from "../Constants";
-import { EliteLeagueRequest } from "../Request/EliteLeagueRequest";
-import { ConnectionInterface } from "./Interface/ConnectionInterface";
+import { BASE_URL, CONTENT_TYPE } from '../Constants';
+import { EliteLeagueRequest } from '../Request/EliteLeagueRequest';
+import { ConnectionInterface } from './Interface/ConnectionInterface';
 
 export abstract class Client implements ConnectionInterface {
     private headers: HeadersInit;
@@ -43,11 +43,22 @@ export abstract class Client implements ConnectionInterface {
         return result;
     }
 
+    getFetchParams(body?: EliteLeagueRequest): RequestInit {
+        const params = {
+            method: 'get',
+            headers: this.getHeaders(),
+        } as RequestInit;
+
+        if (body) params.body = JSON.stringify(body);
+
+        return params;
+    }
+
     /**
      * Make API Request
      * @param method string
      * @param path string
-     * @param data FutureTicketingRequest<RT> | null
+     * @param data EliteLeagueRequest | null
      * @param headers HeadersInit
      * @returns T
      */
