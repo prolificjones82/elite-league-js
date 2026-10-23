@@ -1,40 +1,40 @@
 {
-  "name": "elite-league-js",
-  "version": "1.0.0-alpha.1",
-  "description": "JS SDK for the Elite League API",
-  "scripts": {
-      "start": "tsc -p tsconfig.json --watch",
-      "build": "tsc -p tsconfig.json",
-      "check": "tsc --noEmit -p tsconfig.json",
-      "test": "npm run build && node --import ./test/register-loader.js --test test/*.test.js",
-      "format": "prettier --write .",
-      "format:check": "prettier --check ."
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/prolificjones82/elite-league-js.git"
-  },
-  "keywords": [],
-  "license": "GPL-3.0-or-later",
-  "author": "Lee Jones <mail@leejones.me.uk>",
-  "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+    "name": "elite-league-js",
+    "version": "1.0.0-alpha.1",
+    "description": "JS SDK for the Elite League API",
+    "scripts": {
+        "start": "tsc -p tsconfig.json --watch",
+        "build": "tsc -p tsconfig.json",
+        "check": "tsc --noEmit -p tsconfig.json",
+        "test": "npm run build && node --import ./test/register-loader.js --test test/*.test.js",
+        "format": "prettier --write .",
+        "format:check": "prettier --check ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/prolificjones82/elite-league-js.git"
+    },
+    "keywords": [],
+    "license": "GPL-3.0-or-later",
+    "author": "Lee Jones <mail@leejones.me.uk>",
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "bugs": {
+        "url": "https://github.com/prolificjones82/elite-league-js/issues"
+    },
+    "homepage": "https://github.com/prolificjones82/elite-league-js#readme",
+    "devDependencies": {
+        "prettier": "^3.9.10",
+        "typescript": "^7.0.2"
     }
-  },
-  "files": [
-    "dist"
-  ],
-  "bugs": {
-    "url": "https://github.com/prolificjones82/elite-league-js/issues"
-  },
-  "homepage": "https://github.com/prolificjones82/elite-league-js#readme",
-  "devDependencies": {
-    "prettier": "^3.9.10",
-    "typescript": "^7.0.2"
-  }
 }
