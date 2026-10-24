@@ -1,6 +1,6 @@
 {
     "name": "elite-league-js",
-    "version": "1.0.0-alpha.1",
+    "version": "1.0.0-rc.1",
     "description": "JS SDK for the Elite League API",
     "scripts": {
         "start": "tsc -p tsconfig.json --watch",
