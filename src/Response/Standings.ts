@@ -1,5 +1,7 @@
-export type Standings = {
-    groupId?: number;
+export type Standings = StandingsGroup[];
+
+export type StandingsGroup = {
+    groupId?: number | null;
     groupName?: string;
     complete: boolean;
     clubs: StandingsTeam[];
@@ -12,7 +14,7 @@ export type StandingsTeam = {
     teamOriginal: string;
     shortcut: string;
     position: number;
-    ponumbers: number;
+    points: number;
     games: number;
     wins: number;
     winsOt: number;
@@ -29,5 +31,5 @@ export type StandingsTeam = {
     onlyOTlosts: number;
     onlySOlosts: number;
     qualified: boolean;
-    ppg: string;
+    ppg: number;
 };

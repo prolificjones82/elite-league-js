@@ -6,14 +6,7 @@ export class ScheduleRequest extends Client {
     async getLeagueSchedule(league: League, year: number | string): Promise<Schedule> {
         const path = `/league-matches/${String(year)}/${String(league)}.json`;
 
-        const req = await fetch(path, this.getFetchParams());
-        const response = await req.json();
-
-        if (!response.ok) {
-            throw new Error(response.message || 'Unknown API Error');
-        }
-
-        return response as Schedule;
+        return this.makeRequest<Schedule>('get', path);
     }
 
     async getTeamSchedule(
@@ -23,13 +16,6 @@ export class ScheduleRequest extends Client {
     ): Promise<Schedule> {
         const path = `/league-team-matches/${String(year)}/${String(league)}/${String(team)}.json`;
 
-        const req = await fetch(path, this.getFetchParams());
-        const response = await req.json();
-
-        if (!response.ok) {
-            throw new Error(response.message || 'Unknown API Error');
-        }
-
-        return response as Schedule;
+        return this.makeRequest<Schedule>('get', path);
     }
 }

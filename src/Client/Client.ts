@@ -80,7 +80,7 @@ export abstract class Client implements ConnectionInterface {
         const request = await fetch(`${BASE_URL}/${requestPath}`, params);
         const response = await request.json();
 
-        if (response.ok) {
+        if (!request.ok || response.ok === false) {
             throw new Error(response.message || 'Unknown API Error');
         }
 
